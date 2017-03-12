@@ -1,0 +1,51 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>iit</groupId>
+	<artifactId>test</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>war</packaging>
+	<name>Agence Voyage</name>
+	<description>site web Agence de voyage</description>
+
+	<properties>
+		<jdk.version>1.7</jdk.version>
+
+		<!-- Logger <logback.version>1.0.9</logback.version> <log4j.version>1.2.17</log4j.version> 
+			<slf4j.version>1.7.2</slf4j.version> -->
+
+		<!-- host port where the application will be deployed -->
+		<application.host>localhost</application.host>
+		<application.port>8000</application.port>
+		<application.contextpath>/agence-voyage</application.contextpath>
+	</properties>
+
+	<dependencies>
+		<!-- Junit -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<scope>test</scope>
+			<version>4.8.2</version>
+		</dependency>
+	</dependencies>
+	<profiles>
+		<profile>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.eclipse.jetty</groupId>
+						<artifactId>jetty-maven-plugin</artifactId>
+						<version>9.3.17-SNAPSHOT</version>
+						<configuration>
+							<scanIntervalSeconds>10</scanIntervalSeconds>
+							<webApp>
+								<contextPath>/test</contextPath>
+							</webApp>
+						</configuration>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+	</profiles>
+</project>
